@@ -1867,3 +1867,46 @@ img {
 img {
     content-visibility: auto;
 }
+/* ===== SAMEER CARPENTER NIGHT MODE FIX ===== */
+
+body.dark-mode {
+    background: #0b0b0b !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode section,
+body.dark-mode .gallery,
+body.dark-mode .gallery-section {
+    background: #0b0b0b !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode span {
+    color: #ffffff !important;
+}
+
+body.dark-mode .gallery-item {
+    background: #111111 !important;
+}
+
+body.dark-mode .gallery-filters .filter-btn {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-color: #FFD700 !important;
+}
+
+body.dark-mode .filter-btn.active {
+    background: #FFD700 !important;
+    color: #000000 !important;
+}
+
+/* Browser को भी dark theme बताता है */
+:root {
+    color-scheme: light dark;
+}
