@@ -216,12 +216,14 @@ font-size:40px;
 color:#FFD700;
 margin-bottom:40px;
 }
-
 .gallery-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
+    display:grid !important;
+    grid-template-columns:repeat(2, 1fr) !important;
+    gap:12px !important;
+    max-width:1200px;
+    margin:auto;
 }
+
 
 .gallery-grid img{
     width:100%;
