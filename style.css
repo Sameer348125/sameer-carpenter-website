@@ -386,18 +386,6 @@ box-shadow:0 5px 20px rgba(0,0,0,.4);
 z-index:9999;
 }
 
-.floating-whatsapp{
-bottom:20px;
-background:#25D366;
-color:#fff;
-}
-
-.floating-call{
-bottom:95px;
-background:#FFD700;
-color:#000;
-}
-
 /* ===== MOBILE ===== */
 
 @media (max-width:768px){
@@ -1911,4 +1899,45 @@ body.dark-mode .filter-btn.active {
 /* Browser को भी dark theme बताता है */
 :root {
     color-scheme: light dark;
+}
+/* ===== FIX GALLERY MOBILE ===== */
+
+.gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+}
+
+.gallery-item {
+    display: block !important;
+    width: 100% !important;
+    grid-column: auto !important;
+    margin: 0 !important;
+}
+
+.gallery-item img.zoom-img {
+    width: 100% !important;
+    height: 190px !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 14px !important;
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .gallery-item {
+        grid-column: auto !important;
+    }
+
+    .gallery-item img.zoom-img {
+        height: 190px !important;
+    }
 }
