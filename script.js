@@ -114,28 +114,23 @@ if(answer.style.display === "block"){
 });
 
 });
-// ===== GALLERY FILTER =====
+function filterSelection(category) {
+    const items = document.querySelectorAll(".gallery-item");
+    const buttons = document.querySelectorAll(".filter-btn");
 
-function filterSelection(category){
+    buttons.forEach(button => {
+        button.classList.remove("active");
 
-const items = document.querySelectorAll(".filter");
+        if (button.dataset.filter === category) {
+            button.classList.add("active");
+        }
+    });
 
-const buttons = document.querySelectorAll(".filter-buttons button");
-
-buttons.forEach(btn => btn.classList.remove("active"));
-
-event.target.classList.add("active");
-
-items.forEach(item=>{
-
-if(category==="all"){
-item.style.display="block";
-}else if(item.classList.contains(category)){
-item.style.display="block";
-}else{
-item.style.display="none";
-}
-
-});
-
+    items.forEach(item => {
+        if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
 }
