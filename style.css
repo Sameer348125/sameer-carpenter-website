@@ -1961,3 +1961,52 @@ body.dark-mode .filter-btn.active {
     color: #111 !important;
     background: #FFD700 !important;
 }
+/* ===== GALLERY FILTER BUTTONS ===== */
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 35px auto 50px;
+    padding: 0 15px;
+}
+
+.filter-btn {
+    background: #151515;
+    color: #ffffff;
+    border: 3px solid #ffd700;
+    border-radius: 35px;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #ffd700;
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #ffd700;
+    color: #000000;
+    border-color: #ffd700;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .gallery-filters {
+        gap: 12px;
+        margin-bottom: 45px;
+    }
+
+    .filter-btn {
+        padding: 12px 22px;
+        font-size: 17px;
+    }
+
+}
