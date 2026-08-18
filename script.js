@@ -114,23 +114,35 @@ if(answer.style.display === "block"){
 });
 
 });
-function filterSelection(category) {
-    const items = document.querySelectorAll(".gallery-item");
-    const buttons = document.querySelectorAll(".filter-btn");
+// ===== GALLERY FILTER =====
 
-    buttons.forEach(button => {
-        button.classList.remove("active");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-item");
 
-        if (button.dataset.filter === category) {
-            button.classList.add("active");
-        }
+filterButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const filter = button.getAttribute("data-filter");
+
+        // Active button बदलना
+        filterButtons.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        // Photos filter करना
+        galleryItems.forEach(function(item) {
+
+            if (filter === "all" || item.classList.contains(filter)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+
+        });
+
     });
 
-    items.forEach(item => {
-        if (category === "all" || item.classList.contains(category)) {
-            item.style.display = "block";
-        } else {
-            item.style.display = "none";
-        }
-    });
-}
+});
