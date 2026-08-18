@@ -1949,3 +1949,15 @@ body.dark-mode .filter-btn.active {
         height: 190px !important;
     }
 }
+/* Door button fix */
+.gallery-filters .filter-btn[data-filter="door"] {
+    color: #fff !important;
+    background: transparent !important;
+    border: 2px solid #FFD700 !important;
+}
+
+.gallery-filters .filter-btn[data-filter="door"]:hover,
+.gallery-filters .filter-btn[data-filter="door"].active {
+    color: #111 !important;
+    background: #FFD700 !important;
+}
