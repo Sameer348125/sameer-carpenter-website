@@ -770,6 +770,14 @@ line-height:1.7;
     background:#FFD700;
     color:#000;
 }
+.gallery-filters .filter-btn {
+    color: #fff !important;
+}
+
+.gallery-filters .filter-btn.active {
+    color: #111 !important;
+    background: #FFD700 !important;
+}
 /* ===== VIDEO GALLERY ===== */
 
 .video-gallery{
