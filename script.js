@@ -114,30 +114,38 @@ if(answer.style.display === "block"){
 });
 
 });
-const filterButtons = document.querySelectorAll(".filter-btn");
-const galleryItems = document.querySelectorAll(".gallery-item");
+// ===== GALLERY FILTER =====
 
-filterButtons.forEach(function(button) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    button.addEventListener("click", function() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
 
-        const filter = button.getAttribute("data-filter");
+    filterButtons.forEach(function (button) {
 
-        // Active button बदलें
-        filterButtons.forEach(function(btn) {
-            btn.classList.remove("active");
-        });
+        button.addEventListener("click", function (e) {
 
-        button.classList.add("active");
+            e.preventDefault();
 
-        // Photos filter करें
-        galleryItems.forEach(function(item) {
+            const filter = this.getAttribute("data-filter");
 
-            if (filter === "all" || item.classList.contains(filter)) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
+            // Active button
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            // Filter photos
+            galleryItems.forEach(function (item) {
+
+                if (filter === "all" || item.classList.contains(filter)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+
+            });
 
         });
 
