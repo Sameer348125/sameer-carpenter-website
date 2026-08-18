@@ -114,8 +114,6 @@ if(answer.style.display === "block"){
 });
 
 });
-// ===== GALLERY FILTER =====
-
 const filterButtons = document.querySelectorAll(".filter-btn");
 const galleryItems = document.querySelectorAll(".gallery-item");
 
@@ -125,14 +123,14 @@ filterButtons.forEach(function(button) {
 
         const filter = button.getAttribute("data-filter");
 
-        // Active button बदलना
+        // Active button बदलें
         filterButtons.forEach(function(btn) {
             btn.classList.remove("active");
         });
 
         button.classList.add("active");
 
-        // Photos filter करना
+        // Photos filter करें
         galleryItems.forEach(function(item) {
 
             if (filter === "all" || item.classList.contains(filter)) {
